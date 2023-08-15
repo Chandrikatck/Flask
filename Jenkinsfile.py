@@ -3,8 +3,8 @@ def img
 pipeline {
     environment {
         registry = "chandrikatck/flaskwebapp" //To push an image to Docker Hub, you must first name your local image using your Docker Hub username and the repository name that you created through Docker Hub on the web.
-        registryCredential = 'DOCKERHUB'
-        githubCredential = 'GITHUB'
+        registryCredential = 'chandrikatck'
+        githubCredential = 'chandrikatck'
         dockerImage = ''
     }
     agent any
@@ -13,7 +13,7 @@ pipeline {
         stage('checkout') {
                 steps {
                 git branch: 'master',
-                credentialsId: githubCredential,
+                credentialsId: chandrikatck,
                 url: 'https://github.com/Chandrikatck/Flask.git'
                 }
         }
